@@ -9,16 +9,14 @@ class categor_view extends StatelessWidget {
   // List<Genres>genres=[];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey.shade900,
-      body:Padding(
+    return Padding(
         padding: const EdgeInsets.symmetric(vertical: 50,horizontal: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text("Browse category",style: TextStyle(
               color: Colors.white,
-             fontSize: 25 ,
+             fontSize: 30 ,
               fontWeight: FontWeight.bold,
             ),),
             FutureBuilder(
@@ -44,12 +42,7 @@ class categor_view extends StatelessWidget {
                           mainAxisSpacing: 16
                       ),
                       itemBuilder:(context, index) {
-                        return InkWell(
-                            onTap: () {
-
-                            },
-                            child:category_item(genrelist[index],index)
-                        );
+                        return category_item(genrelist[index],index);
                       },
                     ),
                   );
@@ -58,7 +51,6 @@ class categor_view extends StatelessWidget {
 
           ],
         ),
-      ) ,
-    );
+      );
   }
 }

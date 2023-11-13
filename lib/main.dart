@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movies_app/layout/home_layout/home_screen.dart';
 import 'package:movies_app/screens/category_view.dart';
 
 void main() {
@@ -13,8 +14,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: categor_view.Routename,
+        initialRoute:home_screen.RouteName,
       routes: {
+          home_screen.RouteName:(context)=>home_screen(),
           categor_view.Routename:(context)=>categor_view(),
       },
     );
