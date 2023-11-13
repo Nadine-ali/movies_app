@@ -25,6 +25,7 @@ class _home_screenState extends State<home_screen> {
           body: tabs[selectedindex],
 
           bottomNavigationBar: BottomNavigationBar(
+            iconSize: 30,
             backgroundColor:Colors.grey.shade900,
             type: BottomNavigationBarType.fixed,
             elevation: 0,
