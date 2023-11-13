@@ -1,7 +1,13 @@
 class CategoryResponse {
+  String? success;
+  int? status_code;
+  String? status_message;
   List<Genres>? genres;
   CategoryResponse({
-      this.genres,});
+      this.genres,
+      this.status_code,
+      this.status_message,
+      this.success});
 
   CategoryResponse.fromJson(dynamic json) {
     if (json['genres'] != null) {
@@ -10,6 +16,9 @@ class CategoryResponse {
         genres?.add(Genres.fromJson(v));
       });
     }
+    status_message = json['status_message'];
+    success = json['success'];
+    status_code = json['status_code'];
   }
 
 }
@@ -17,9 +26,11 @@ class CategoryResponse {
 class Genres {
   int? id;
   String? name;
+
   Genres({
       this.id, 
-      this.name,});
+      this.name,
+  });
 
   Genres.fromJson(dynamic json) {
     id = json['id'];
