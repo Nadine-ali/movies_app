@@ -1,9 +1,9 @@
-class Category {
+class CategoryResponse {
   List<Genres>? genres;
-  Category({
+  CategoryResponse({
       this.genres,});
 
-  Category.fromJson(dynamic json) {
+  CategoryResponse.fromJson(dynamic json) {
     if (json['genres'] != null) {
       genres = [];
       json['genres'].forEach((v) {
