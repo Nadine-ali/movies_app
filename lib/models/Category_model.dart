@@ -28,7 +28,7 @@ class Genres {
   String? name;
 
   Genres({
-      this.id, 
+      this.id,
       this.name,
   });
 

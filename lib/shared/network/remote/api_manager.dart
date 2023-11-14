@@ -6,23 +6,25 @@ class api_manager{
   static Future<CategoryResponse>getCategory()async{
   Uri URL=Uri.https(
    "api.themoviedb.org",
-    "3/genre/movie/list",
-    {"api_key":"162838abd2fe2174b35f14eebc3b4c07"}
+    "/3/genre/movie/list",
+    {"api_key":"162838abd2fe2174b35f14eebc3b4c07",
+    "language":"en"
+
+    }
   );
   http.Response response=await http.get(URL);
   var jsonData=jsonDecode(response.body);
   CategoryResponse categoryResponse=CategoryResponse.fromJson(jsonData);
   return categoryResponse;
   }
-  static Future<MoviesResponse>getMovies(int? genre_ids)async{
+  static Future<MoviesResponse>getMovies(String genre_id)async{
     Uri URL=Uri.https(
         "api.themoviedb.org",
-        "3/discover/movie",
-        {"api_Key":"162838abd2fe2174b35f14eebc3b4c07",
-          "page":"1",
-          "genre_ids":genre_ids
-        }
-    );
+        "/3/discover/movie",
+        {"apiKey":"162838abd2fe2174b35f14eebc3b4c07",
+         "with_genres":genre_id,
+         "page":1,
+        });
     http.Response response=await http.get(URL);
     var jsonData=jsonDecode(response.body);
     MoviesResponse moviesResponse=MoviesResponse.fromJson(jsonData);

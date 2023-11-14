@@ -4,6 +4,7 @@ import 'package:movies_app/models/Category_model.dart';
 import 'package:movies_app/models/Movies_model.dart';
 import 'package:movies_app/screens/movies_view.dart';
 
+
 class category_item extends StatelessWidget {
 
   Genres genres;

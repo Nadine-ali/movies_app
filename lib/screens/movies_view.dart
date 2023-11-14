@@ -22,7 +22,7 @@ class movies_view extends StatelessWidget {
       body: Container(
         child: Column(
           children: [
-            FutureBuilder(future: api_manager.getMovies(args.id),
+            FutureBuilder<MoviesResponse>(future: api_manager.getMovies(args.id.toString()),
                 builder:(context, snapshot) {
                   if(snapshot.connectionState==ConnectionState.waiting){
                     return Center(child: CircularProgressIndicator(),);
