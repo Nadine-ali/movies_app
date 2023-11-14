@@ -1,37 +1,31 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:movies_app/models/Category_model.dart';
+import 'package:movies_app/models/Movies_model.dart';
+import 'package:movies_app/screens/movies_view.dart';
 
-class category_item extends StatefulWidget {
+class category_item extends StatelessWidget {
 
   Genres genres;
-  int index;
-  Color color=Color(0xffce890a);
-  category_item(this.genres,this.index);
+  category_item(this.genres);
 
-  @override
-  State<category_item> createState() => _category_itemState();
-}
-
-class _category_itemState extends State<category_item> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        widget.color=Colors.red;
-        setState(() {
-
-        });
+        Navigator.pushNamed(context, movies_view.RouteName,
+          arguments:genres,
+        );
       },
       child: Container(
         decoration: BoxDecoration(
-          color: widget.color,
+          color:Color(0xffce890a),
           borderRadius: BorderRadius.circular(25)
         ),
         alignment: Alignment.center,
         height: 100,
         width: 100,
-        child: Text(widget.genres.name??'',
+        child: Text(genres.name??'',
         style: TextStyle(fontSize: 23,
         color: Colors.white,
         fontWeight: FontWeight.bold,
@@ -40,4 +34,5 @@ class _category_itemState extends State<category_item> {
       ),
     );
   }
+
 }

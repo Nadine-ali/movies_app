@@ -1,16 +1,22 @@
-class MoviesDiscover {
+class MoviesResponse {
+  String? success;
+  int? status_code;
+  String? status_message;
   int? page;
   List<Results>? results;
   int? totalPages;
   int? totalResults;
 
-  MoviesDiscover({
+  MoviesResponse({
+    this. success,
+    this.status_code,
+    this. status_message,
       this.page, 
       this.results, 
       this.totalPages, 
       this.totalResults,});
 
-  MoviesDiscover.fromJson(dynamic json) {
+  MoviesResponse.fromJson(dynamic json) {
     page = json['page'];
     if (json['results'] != null) {
       results = [];
@@ -20,6 +26,9 @@ class MoviesDiscover {
     }
     totalPages = json['total_pages'];
     totalResults = json['total_results'];
+    success = json['success'];
+    status_code = json['status_code'];
+    status_message = json['status_message'];
   }
 
 }
@@ -43,7 +52,7 @@ class Results {
   Results({
       this.adult, 
       this.backdropPath, 
-      this.genreIds, 
+      this.genreIds,
       this.id, 
       this.originalLanguage, 
       this.originalTitle, 
