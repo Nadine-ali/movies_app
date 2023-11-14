@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:movies_app/models/Movies_model.dart';
 
 class movies_item extends StatelessWidget {
-  Results results;
 
+  Results results;
   movies_item(this.results);
   @override
   Widget build(BuildContext context) {

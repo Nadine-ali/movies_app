@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/screens/category_view.dart';
+import 'package:movies_app/screens/genres_view.dart';
 
 class home_screen extends StatefulWidget {
   static const String RouteName = "home_screen";
@@ -59,7 +59,7 @@ class _home_screenState extends State<home_screen> {
 
   List<Widget> tabs = [
 
-    categor_view()
+    genres_view(),
 
   ];
 }

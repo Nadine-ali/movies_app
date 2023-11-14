@@ -1,15 +1,15 @@
-class CategoryResponse {
+class GenresResponse {
   String? success;
   int? status_code;
   String? status_message;
   List<Genres>? genres;
-  CategoryResponse({
+  GenresResponse({
       this.genres,
       this.status_code,
       this.status_message,
       this.success});
 
-  CategoryResponse.fromJson(dynamic json) {
+  GenresResponse.fromJson(dynamic json) {
     if (json['genres'] != null) {
       genres = [];
       json['genres'].forEach((v) {

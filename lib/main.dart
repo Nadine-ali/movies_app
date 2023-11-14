@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/layout/home_layout/home_screen.dart';
-import 'package:movies_app/screens/category_view.dart';
+import 'package:movies_app/screens/genres_view.dart';
 import 'package:movies_app/screens/movies_view.dart';
 
 void main() {
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         initialRoute:home_screen.RouteName,
       routes: {
           home_screen.RouteName:(context)=>home_screen(),
-          categor_view.Routename:(context)=>categor_view(),
+          genres_view.Routename:(context)=>genres_view(),
           movies_view.RouteName:(context)=>movies_view(),
       },
     );

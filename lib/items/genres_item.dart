@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:movies_app/models/Category_model.dart';
+import 'package:movies_app/models/genres_model.dart';
 import 'package:movies_app/models/Movies_model.dart';
 import 'package:movies_app/screens/movies_view.dart';
 
 
-class category_item extends StatelessWidget {
+class genres_item extends StatelessWidget {
 
   Genres genres;
-  category_item(this.genres);
+  genres_item(this.genres);
 
   @override
   Widget build(BuildContext context) {

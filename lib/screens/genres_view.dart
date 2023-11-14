@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/items/category_item.dart';
-import 'package:movies_app/models/Category_model.dart';
+import 'package:movies_app/items/genres_item.dart';
+import 'package:movies_app/models/genres_model.dart';
 import 'package:movies_app/shared/network/remote/api_manager.dart';
 
-class categor_view extends StatelessWidget {
-  categor_view({super.key});
-  static const Routename="category_view";
+class genres_view extends StatelessWidget {
+  genres_view({super.key});
+  static const Routename="genres_view";
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -41,7 +41,7 @@ class categor_view extends StatelessWidget {
                           mainAxisSpacing: 16
                       ),
                       itemBuilder:(context, index) {
-                        return category_item(genrelist[index]);
+                        return genres_item(genrelist[index]);
                       },
                     ),
                   );
