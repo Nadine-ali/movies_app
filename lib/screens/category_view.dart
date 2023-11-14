@@ -6,11 +6,10 @@ import 'package:movies_app/shared/network/remote/api_manager.dart';
 class categor_view extends StatelessWidget {
   categor_view({super.key});
   static const Routename="category_view";
-  // List<Genres>genres=[];
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 50,horizontal: 20),
+        padding: const EdgeInsets.only(top: 40,left: 20,right: 20,bottom:10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -42,7 +41,7 @@ class categor_view extends StatelessWidget {
                           mainAxisSpacing: 16
                       ),
                       itemBuilder:(context, index) {
-                        return category_item(genrelist[index],index);
+                        return category_item(genrelist[index]);
                       },
                     ),
                   );
