@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart'as http;
 import 'package:movies_app/models/Movies_model.dart';
+import 'package:movies_app/models/popular_model.dart';
 import '../../../models/genres_model.dart';
 class api_manager{
   static Future<GenresResponse>getCategory()async{
@@ -17,20 +18,34 @@ class api_manager{
   GenresResponse genresResponse=GenresResponse.fromJson(jsonData);
   return genresResponse;
   }
-  static Future<MoviesResponse>getMovies(String genre_id, int page)async{
+  static Future<PopularResponse>getMovies(String genre_id,int page)async{
     Uri URL=Uri.https(
         "api.themoviedb.org",
-        "/3/discover/movie",
+        "/3/movie/popular",
         {"api_key":"162838abd2fe2174b35f14eebc3b4c07",
           "include_adult":"false",
           "include_video":"false",
           "language":"en-US",
-          "with_genres":genre_id,
-          "page":page,
+          "with_genres":"$genre_id",
+          "page":"$page",
         });
     http.Response response=await http.get(URL);
     var jsonData=jsonDecode(response.body);
-    MoviesResponse moviesResponse=MoviesResponse.fromJson(jsonData);
+    PopularResponse moviesResponse=PopularResponse.fromJson(jsonData);
     return moviesResponse;
+  }
+  static Future<PopularResponse>getPopular()async{
+    Uri URL=Uri.https(
+        "api.themoviedb.org",
+        "/3/movie/popular",
+        {"api_key":"162838abd2fe2174b35f14eebc3b4c07",
+          // "include_adult":"false",
+          // "include_video":"false",
+          // "language":"en-US",
+        });
+    http.Response response=await http.get(URL);
+    var jsonData=jsonDecode(response.body);
+    PopularResponse popularResponse=PopularResponse.fromJson(jsonData);
+    return popularResponse;
   }
 }

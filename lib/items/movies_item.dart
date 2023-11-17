@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:movies_app/models/Movies_model.dart';
+import 'package:movies_app/models/popular_model.dart';
 
 class movies_item extends StatelessWidget {
 
@@ -11,22 +12,32 @@ class movies_item extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all(20),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.network(results.backdropPath??'',
-            width: 200,
-            height: 300,
-            fit: BoxFit.fill,
+          Container(
+            child: Image.network(results.backdropPath ?? '',
+              width: 150,
+              height: 250,
+              fit: BoxFit.cover,
+            ),
           ),
-          SizedBox(width: 20,),
+          SizedBox(width: 15,),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(results.title??'',style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w600,
-                color: Colors.white
-              ),),
-              Text(results.overview??'',style: TextStyle(
+              Container(
+                width: 200,
+                child: Text("""${results.title??''}""",
+                  // overflow:TextOverflow.ellipsis,
+                  // maxLines: 1,
+                  style: TextStyle(
+                  fontSize: 19,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.white,
+
+                ),),
+              ),
+              Text(results.originalLanguage??'',style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
                 color: Colors.white

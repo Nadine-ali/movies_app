@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/screens/genres_view.dart';
+import 'package:movies_app/screens/home_view.dart';
+import 'package:movies_app/screens/search_view.dart';
 
 class home_screen extends StatefulWidget {
   static const String RouteName = "home_screen";
@@ -21,9 +23,19 @@ class _home_screenState extends State<home_screen> {
 
         ),
         Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.grey.shade900,
+            elevation: 0,
+            title: Text("Movies",
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+              color: Colors.white
+            ),
+            ),
+          ),
           backgroundColor: Colors.grey.shade900,
           body: tabs[selectedindex],
-
           bottomNavigationBar: BottomNavigationBar(
             iconSize: 30,
             backgroundColor:Colors.grey.shade900,
@@ -58,7 +70,8 @@ class _home_screenState extends State<home_screen> {
   }
 
   List<Widget> tabs = [
-
+    home_view(),
+    search_view(),
     genres_view(),
 
   ];

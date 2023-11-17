@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:movies_app/items/movies_item.dart';
 import 'package:movies_app/models/genres_model.dart';
 import 'package:movies_app/models/Movies_model.dart';
+import 'package:movies_app/models/popular_model.dart';
 import 'package:movies_app/shared/network/remote/api_manager.dart';
 
 class movies_view extends StatelessWidget {
@@ -22,7 +23,7 @@ class movies_view extends StatelessWidget {
       body: Container(
         child: Column(
           children: [
-            FutureBuilder<MoviesResponse>(future: api_manager.getMovies(args.id.toString(),1),
+            FutureBuilder<PopularResponse>(future: api_manager.getMovies(args.id.toString(),2),
                 builder:(context, snapshot) {
                   if(snapshot.connectionState==ConnectionState.waiting){
                     return Center(child: CircularProgressIndicator(),);
