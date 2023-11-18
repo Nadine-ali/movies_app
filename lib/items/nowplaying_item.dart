@@ -1,16 +1,18 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:movies_app/models/popular_model.dart';
-import 'package:movies_app/models/popular_model.dart';
 
-class popular_item extends StatelessWidget {
+import '../models/nowPlaying_model.dart';
+
+
+class nowplaying_item extends StatelessWidget {
 
   List<Results> results;
   int index;
-  popular_item(this.results,this.index);
+  nowplaying_item(this.results,this.index);
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.all(10),
       child: Stack(
         alignment: Alignment.bottomCenter,
         children:[
@@ -24,6 +26,7 @@ class popular_item extends StatelessWidget {
           ),
           Container(
             height: 50,
+            width: 200,
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
               color: Colors.black38,

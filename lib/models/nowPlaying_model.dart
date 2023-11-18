@@ -1,14 +1,17 @@
-class PopularResponse {
-  PopularResponse({
-     this. success,
-     this.status_code,
-     this. status_message,
+class NowPlayingResponse {
+  NowPlayingResponse({
+      this.dates, 
       this.page, 
       this.results, 
       this.totalPages, 
-      this.totalResults,});
+      this.totalResults,
+      this.status_code,
+      this.status_message,
+      this.success
+    });
 
-  PopularResponse.fromJson(dynamic json) {
+  NowPlayingResponse.fromJson(dynamic json) {
+    dates = json['dates'] != null ? Dates.fromJson(json['dates']) : null;
     page = json['page'];
     if (json['results'] != null) {
       results = [];
@@ -25,6 +28,7 @@ class PopularResponse {
   String? success;
   int? status_code;
   String? status_message;
+  Dates? dates;
   int? page;
   List<Results>? results;
   int? totalPages;
@@ -79,6 +83,20 @@ class Results {
   bool? video;
   double? voteAverage;
   int? voteCount;
+
+}
+
+class Dates {
+  Dates({
+      this.maximum, 
+      this.minimum,});
+
+  Dates.fromJson(dynamic json) {
+    maximum = json['maximum'];
+    minimum = json['minimum'];
+  }
+  String? maximum;
+  String? minimum;
 
 
 }

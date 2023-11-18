@@ -9,15 +9,16 @@ class genres_view extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.only(top: 40,left: 20,right: 20,bottom:10),
+        padding: const EdgeInsets.only(top: 10,left: 20,right: 20,bottom:10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text("Browse category",style: TextStyle(
-              color: Colors.white,
+              color: Color(0xffce890a),
              fontSize: 30 ,
               fontWeight: FontWeight.bold,
             ),),
+            SizedBox(height: 20,),
             FutureBuilder(
                 future: api_manager.getCategory(),
                 builder: (context, snapshot) {

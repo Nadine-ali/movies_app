@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 // import 'package:movies_app/models/Movies_model.dart';
-import 'package:movies_app/models/popular_model.dart';
+import 'package:movies_app/models/Search_model.dart';
 
-class movies_item extends StatelessWidget {
+class search_item extends StatelessWidget {
 
   Results results;
-  movies_item(this.results);
+  search_item(this.results,);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,12 +31,11 @@ class movies_item extends StatelessWidget {
             children: [
               SizedBox(height: 15,),
               Container(
-                width: 200,
+                width: 170,
                 child: Text("""${results.title??''}""",
-                  // overflow:TextOverflow.ellipsis,
-                  // maxLines: 1,
                   style: TextStyle(
-                  fontSize: 23,
+                  // overflow: TextOverflow.ellipsis,
+                  fontSize: 20,
                   fontWeight: FontWeight.w600,
                   color: Colors.white,
 

@@ -25,14 +25,15 @@ class _home_screenState extends State<home_screen> {
         Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.grey.shade900,
+            toolbarHeight: 20,
             elevation: 0,
-            title: Text("Movies",
-            style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-              color: Colors.white
-            ),
-            ),
+            // title: Text("Movies App",
+            // style: TextStyle(
+            //   fontSize: 30,
+            //   fontWeight: FontWeight.bold,
+            //   color: Color(0xffce890a)
+            // ),
+            // ),
           ),
           backgroundColor: Colors.grey.shade900,
           body: tabs[selectedindex],

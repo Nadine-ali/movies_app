@@ -1,14 +1,15 @@
-class PopularResponse {
-  PopularResponse({
-     this. success,
-     this.status_code,
-     this. status_message,
+class TopRatedResponse {
+  TopRatedResponse({
       this.page, 
       this.results, 
       this.totalPages, 
-      this.totalResults,});
+      this.totalResults,
+    this.status_code,
+    this.status_message,
+    this.success
+  });
 
-  PopularResponse.fromJson(dynamic json) {
+  TopRatedResponse.fromJson(dynamic json) {
     page = json['page'];
     if (json['results'] != null) {
       results = [];
@@ -22,13 +23,13 @@ class PopularResponse {
     success = json['success'];
     status_code = json['status_code'];
   }
-  String? success;
-  int? status_code;
-  String? status_message;
   int? page;
   List<Results>? results;
   int? totalPages;
   int? totalResults;
+  String? success;
+  int? status_code;
+  String? status_message;
 
 }
 

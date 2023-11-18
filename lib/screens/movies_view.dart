@@ -16,14 +16,15 @@ class movies_view extends StatelessWidget {
         elevation: 0,
         title: Text(args.name??"",style: TextStyle(
           fontWeight: FontWeight.w600,
-          fontSize: 25
+          fontSize: 25,
+          color: Color(0xffce890a)
         ),),
       ),
       backgroundColor: Colors.grey.shade900,
       body: Container(
         child: Column(
           children: [
-            FutureBuilder<PopularResponse>(future: api_manager.getMovies(args.id.toString(),2),
+            FutureBuilder<PopularResponse>(future: api_manager.getMovies(args.id.toString(),1),
                 builder:(context, snapshot) {
                   if(snapshot.connectionState==ConnectionState.waiting){
                     return Center(child: CircularProgressIndicator(),);

@@ -1,14 +1,16 @@
-class PopularResponse {
-  PopularResponse({
-     this. success,
-     this.status_code,
-     this. status_message,
-      this.page, 
-      this.results, 
-      this.totalPages, 
-      this.totalResults,});
 
-  PopularResponse.fromJson(dynamic json) {
+class SearchResponse {
+  SearchResponse({
+    this.page,
+    this.results,
+    this.totalPages,
+    this.totalResults,
+    this.success,
+    this.status_message,
+    this.status_code,
+  });
+
+  SearchResponse.fromJson(dynamic json) {
     page = json['page'];
     if (json['results'] != null) {
       results = [];
@@ -18,36 +20,33 @@ class PopularResponse {
     }
     totalPages = json['total_pages'];
     totalResults = json['total_results'];
-    status_message = json['status_message'];
-    success = json['success'];
-    status_code = json['status_code'];
   }
   String? success;
   int? status_code;
   String? status_message;
   int? page;
-  List<Results>? results;
+  List<Results>?results;
   int? totalPages;
   int? totalResults;
 
-}
 
+}
 class Results {
   Results({
-      this.adult, 
-      this.backdropPath, 
-      this.genreIds, 
-      this.id, 
-      this.originalLanguage, 
-      this.originalTitle, 
-      this.overview, 
-      this.popularity, 
-      this.posterPath, 
-      this.releaseDate, 
-      this.title, 
-      this.video, 
-      this.voteAverage, 
-      this.voteCount,});
+    this.adult,
+    this.backdropPath,
+    this.genreIds,
+    this.id,
+    this.originalLanguage,
+    this.originalTitle,
+    this.overview,
+    this.popularity,
+    this.posterPath,
+    this.releaseDate,
+    this.title,
+    this.video,
+    this.voteAverage,
+    this.voteCount,});
 
   Results.fromJson(dynamic json) {
     adult = json['adult'];
